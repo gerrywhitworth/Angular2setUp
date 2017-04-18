@@ -2,6 +2,8 @@
 import {IMovie} from './movie';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class MovieService {
@@ -20,5 +22,10 @@ export class MovieService {
         return Observable.throw(error.json().error || 'Server error');
     }
 
+    // Added for routing
+    getMovie(id: number): Observable<IMovie> {
+        return this.getMovies()
+            .map((movies: IMovie[]) => movies.find(m => m.movieId === id));
+    }
 
 }
