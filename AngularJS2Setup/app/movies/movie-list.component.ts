@@ -18,6 +18,7 @@ export class MovieListComponent implements OnInit{
     imageMargin: number = 2;
     seePoster: boolean = false;
     listFilter: string;
+    errorMessage: string;
 
     movies: IMovie[];
 
@@ -28,7 +29,9 @@ export class MovieListComponent implements OnInit{
         this.seePoster = !this.seePoster;
     }
     ngOnInit(): void {
-        this.movies = this._movieService.getMovies();
+        this._movieService.getMovies()
+            .subscribe(movies => this.movies = movies,
+            error => this.errorMessage = <any>error);
     }
     onRatingClicked(message: string): void {
         this.pageTitle = 'Movie List: ' + message;
