@@ -1,18 +1,24 @@
-﻿import {Component} from '@angular/core';
+﻿import {Component, OnInit} from '@angular/core';
+import {IMovie} from './movie';
+import {MovieFilterPipe} from './movie-filter.pipe';
+import {ReviewComponent} from '../shared/review.component';
 
 @Component({
     selector: 'mm-movies',
-    templateUrl: 'app/movies/movie-list.component.html'
+    templateUrl: 'app/movies/movie-list.component.html',
+    styleUrls: ['app/movies/movie-list.component.css'],
+    pipes: [MovieFilterPipe],
+    directives: [ReviewComponent]
 })
 
-export class MovieListComponent {
+export class MovieListComponent implements OnInit{
     pageTitle: string = 'Movie List';
     imageWidth: number = 50;
     imageMargin: number = 2;
     seePoster: boolean = false;
     listFilter: string = 'Titanic';
 
-    movies: any[] = [
+    movies: IMovie[] = [
         {
             "movieId": 2,
             "movieName": "Titanic",
@@ -29,11 +35,18 @@ export class MovieListComponent {
             "releaseDate": "4/13/2016",
             "price": 16.00,
             "starRating": 4.8,
-            "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BZTdiNmRhNzUtZWViMi00YmE5LWJhYTItYWRhOGVjNTdhNTViXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+            "imageUrl": "http://ia.media-imdb.com/images/M/MV5BNDcxODkyMjY4MF5BMl5BanBnXkFtZTgwOTk5NTc5MDE@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
         }
     ];
 
     toggleImage(): void {
         this.seePoster = !this.seePoster;
     }
+    ngOnInit(): void {
+        console.log('Invoked ngOnInit');
+    }
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Movie List: ' + message;
+    }
+  
 }
