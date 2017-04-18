@@ -6,3 +6,13 @@ C:\dev\Angular2setUp\AngularJS2Setup\app\main.js
 C:\dev\Angular2setUp\AngularJS2Setup\app\main.js.map
 C:\dev\Angular2setUp\AngularJS2Setup\app\home\welcome.component.js
 C:\dev\Angular2setUp\AngularJS2Setup\app\home\welcome.component.js.map
+C:\dev\Angular2setUp\AngularJS2Setup\app\movies\movie-list.component.js
+C:\dev\Angular2setUp\AngularJS2Setup\app\movies\movie-list.component.js.map
+C:\dev\Angular2setUp\AngularJS2Setup\app\app.component.js
+C:\dev\Angular2setUp\AngularJS2Setup\app\app.component.js.map
+C:\dev\Angular2setUp\AngularJS2Setup\app\app.module.js
+C:\dev\Angular2setUp\AngularJS2Setup\app\app.module.js.map
+C:\dev\Angular2setUp\AngularJS2Setup\app\main.js
+C:\dev\Angular2setUp\AngularJS2Setup\app\main.js.map
+C:\dev\Angular2setUp\AngularJS2Setup\app\home\welcome.component.js
+C:\dev\Angular2setUp\AngularJS2Setup\app\home\welcome.component.js.map
