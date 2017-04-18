@@ -1,5 +1,6 @@
 ﻿import {Component} from "@angular/core";
 import {MovieListComponent} from './movies/movie-list.component';
+import {MovieService} from './movies/movie.service';
 
 @Component({
     selector: "my-app",
@@ -7,7 +8,8 @@ import {MovieListComponent} from './movies/movie-list.component';
                 <div>
                     <mm-movies></mm-movies>
                 </div>`,
-    directives:[MovieListComponent]
+    directives: [MovieListComponent],
+    providers: [MovieService]
 
 })
 export class AppComponent {
